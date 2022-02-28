@@ -137,7 +137,7 @@ export async function executeStakeContract(
     const getherSYLContract = getGetherSYLContract(gatherSYL_Address) as Contract;
     const syltareContract = getSYLTAREContract(sylNFT_Address) as Contract;
 
-    const tokenId = await syltareContract.methods.tokenByIndex(value).call();
+    const tokenId = String(value);
     console.log(tokenId);
 
     await syltareContract.methods
@@ -182,7 +182,7 @@ export async function executeWithdrawContract(
     const getherSYLContract = getGetherSYLContract(gatherSYL_Address) as Contract;
     const syltareContract = getSYLTAREContract(sylNFT_Address) as Contract;
 
-    const tokenId = await syltareContract.methods.tokenByIndex(value).call();
+    const tokenId = String(value);
 
     await getherSYLContract.methods
       .withdraw(sylNFT_Address, tokenId)
